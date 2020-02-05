@@ -1,4 +1,4 @@
-package org.netlink.lumenore.acgapplication;
+package com.example.HelloWorld;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AcgApplicationTests {
+public class HelloWorldApplicationTests {
 
 	@Test
 	public void contextLoads() {
 	}
 
 }
+
