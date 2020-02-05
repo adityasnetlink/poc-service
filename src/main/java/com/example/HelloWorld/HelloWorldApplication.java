@@ -13,21 +13,21 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @RestController
 @EnableScheduling
 
-public class HelloWorldApplication
-{
+public class HelloWorldApplication {
 	private static final Logger logger = LoggerFactory.getLogger(HelloWorldApplication.class);
 	@Value("${netlink}")
-	private   static String userBucketPath;
-	public static void main(String[] args)
-	{
-		System.out.println("main "+ userBucketPath);
+	private static String userBucketPath;
+
+	public static void main(String[] args) {
+		System.out.println("main " + userBucketPath);
 		SpringApplication.run(HelloWorldApplication.class, args);
-		
+
 	}
 
-	/*
-	 * @RequestMapping(value = "/hello") public String helloWorld() {
-	 * logger.info("Inside hello method---"); return "Hello World , Aditya "; }
-	 */
+	@RequestMapping(value = "/hello")
+	public String helloWorld() {
+		logger.info("Inside hello method---");
+		return "Hello World , Aditya ";
+	}
 
 }
