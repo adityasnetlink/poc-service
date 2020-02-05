@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -13,33 +12,22 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @RestController
 @EnableScheduling
-@RequestMapping("app")
-public class HelloWorldApplication {
-	private static final Logger logger = LoggerFactory.getLogger(HelloWorldApplication.class);
-	@Value("${netlink}")
-	private static String userBucketPath;
 
+public class HelloWorldApplication
+{
 	
-	@Value("${app.netlink}")
-	 private String appTitle;
-	 
-	 @GetMapping("/value")
-	 public String getValue()
-	 {
-	  return appTitle;
-	 }
-	 
-	 
-	public static void main(String[] args) {
-		System.out.println("main " + userBucketPath);
+	@Value("${netlink}")
+	private   static String userBucketPath;
+	public static void main(String[] args)
+	{
+		System.out.println("main "+ userBucketPath);
 		SpringApplication.run(HelloWorldApplication.class, args);
-
+		
 	}
 
-	@RequestMapping(value = "/hello")
-	public String helloWorld() {
-		logger.info("Inside hello method---");
-		return userBucketPath;
-	}
+//	/*
+//	 * @RequestMapping(value = "/hello") public String helloWorld() {
+//	 * logger.info("Inside hello method---"); return "Hello World , Aditya "; }
+//	 */
 
 }
