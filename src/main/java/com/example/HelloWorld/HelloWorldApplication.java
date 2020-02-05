@@ -16,15 +16,35 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class HelloWorldApplication
 {
 	
-	@Value("${netlink}")
+	
 	private   static String userBucketPath;
-	@Value("${netlink1}")
+	
 	private   static String userBucketPath1;
+	
+	
+	
+	@Value("${netlink}")
+	public static void setUserBucketPath(String userBucketPath) {
+		HelloWorldApplication.userBucketPath = userBucketPath;
+	}
+
+
+
+	/*
+	 * @Value("${netlink1}") public static void setUserBucketPath1(String
+	 * userBucketPath1) { HelloWorldApplication.userBucketPath1 = userBucketPath1; }
+	 */
+
+
+
+
 	public static void main(String[] args)
 	{
 		System.out.println("main "+ userBucketPath);
-		System.out.println("main "+ userBucketPath1);
+		
 		SpringApplication.run(HelloWorldApplication.class, args);
+		System.out.println("main "+ userBucketPath);
+	
 		
 	}
 

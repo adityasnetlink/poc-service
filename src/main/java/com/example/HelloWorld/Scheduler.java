@@ -3,7 +3,9 @@ package com.example.HelloWorld;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.config.environment.Environment;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -13,11 +15,12 @@ public class Scheduler {
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat(
 			"MM/dd/yyyy HH:mm:ss");
 
+	@Autowired
+	private Environment environment;
 	
 	 @Value("${netlink}")
-	 private static String userBucketPath;
-	 @Value("${netlink1}")
-	 private static String userBucketPath1;
+	 private String userBucketPath;
+	
 	 
 	@Scheduled(fixedRate = 10000)
 	public void performTask() {
@@ -25,7 +28,7 @@ public class Scheduler {
 		System.out.println("Regular task performed at "
 				+ dateFormat.format(new Date()));
 		System.out.println(userBucketPath);
-		System.out.println(userBucketPath1);
+		
 
 	}
 
