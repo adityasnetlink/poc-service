@@ -13,6 +13,7 @@ public class SomeService {
 	private String userBucketPath;
 	@Scheduled(fixedDelay = 1000)
 	public void hello() {
+		System.out.println("Hello from scheduler");
 		System.out.println(userBucketPath);
 		/*
 		 * System.out.println("The balance url is " +

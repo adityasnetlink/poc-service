@@ -10,6 +10,7 @@ public class AppMain {
 	private static String userBucketPath;
 
 	public static void main(String[] args) {
+		System.out.println("Hello from main");
 		System.out.println(userBucketPath);
 		SpringApplication.run(AppMain.class, args);
 	}
