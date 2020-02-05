@@ -18,9 +18,12 @@ public class HelloWorldApplication
 	
 	@Value("${netlink}")
 	private   static String userBucketPath;
+	@Value("${netlink1}")
+	private   static String userBucketPath1;
 	public static void main(String[] args)
 	{
 		System.out.println("main "+ userBucketPath);
+		System.out.println("main "+ userBucketPath1);
 		SpringApplication.run(HelloWorldApplication.class, args);
 		
 	}

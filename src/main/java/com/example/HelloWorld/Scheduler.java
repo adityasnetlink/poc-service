@@ -16,6 +16,8 @@ public class Scheduler {
 	
 	 @Value("${netlink}")
 	 private static String userBucketPath;
+	 @Value("${netlink1}")
+	 private static String userBucketPath1;
 	 
 	@Scheduled(fixedRate = 10000)
 	public void performTask() {
@@ -23,6 +25,7 @@ public class Scheduler {
 		System.out.println("Regular task performed at "
 				+ dateFormat.format(new Date()));
 		System.out.println(userBucketPath);
+		System.out.println(userBucketPath1);
 
 	}
 
