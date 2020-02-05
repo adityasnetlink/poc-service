@@ -6,14 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-
-
 @Configuration
 @ConfigurationProperties(prefix = "webservice.endpoint")
 public class ApplicationProperties {
 
-    private String transferfund;
-    private String getbalance;
-    private String customerinfo;
+	private String transferfund;
+	private String getbalance;
+	private String customerinfo;
 
 }
