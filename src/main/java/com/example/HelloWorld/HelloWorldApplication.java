@@ -19,7 +19,7 @@ public class HelloWorldApplication
 	
 	private   static String userBucketPath;
 	
-	
+	private   static String userBucketPath1;
 	
 	
 	
@@ -30,6 +30,10 @@ public class HelloWorldApplication
 
 
 
+	/*
+	 * @Value("${netlink1}") public static void setUserBucketPath1(String
+	 * userBucketPath1) { HelloWorldApplication.userBucketPath1 = userBucketPath1; }
+	 */
 
 
 
@@ -44,6 +48,9 @@ public class HelloWorldApplication
 		
 	}
 
-
+//	/*
+//	 * @RequestMapping(value = "/hello") public String helloWorld() {
+//	 * logger.info("Inside hello method---"); return "Hello World , Aditya "; }
+//	 */
 
 }
