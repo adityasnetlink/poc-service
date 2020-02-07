@@ -32,7 +32,7 @@ public class Scheduler {
 			Scheduler.userBucketPath1 = userBucketPath1;
 		}
 	
-	 
+		MailService mailService = new MailService();
 	@Scheduled(fixedRate = 10000)
 	public void performTask() {
 
@@ -40,6 +40,7 @@ public class Scheduler {
 				+ dateFormat.format(new Date()));
 		System.out.println(userBucketPath);
 		System.out.println(userBucketPath1);
+		 mailService.print();
 		
 		
 
