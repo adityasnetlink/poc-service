@@ -1,4 +1,4 @@
-package com.example.HelloWorld;
+package com.HelloWorld;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
