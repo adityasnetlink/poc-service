@@ -3,6 +3,8 @@ package com.example.HelloWorld;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -13,8 +15,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.example.HelloWorld.*;
-@Configuration
-@ConfigurationProperties(prefix = "jdbc")
+
 @Component
 public class Scheduler {
 
@@ -29,51 +30,7 @@ public class Scheduler {
 	 
 	 private   static String userBucketPath1;
 		
-	 
-	 public String driver;
-	    public String url;
-	    public String username;
-	    public String password;
-
-	    public String getDriver()
-	    {
-	        return driver;
-	    }
-
-	    public void setDriver(String driver)
-	    {
-	        this.driver = driver;
-	    }
-
-	    public String getUrl()
-	    {
-	        return url;
-	    }
-
-	    public void setUrl(String url)
-	    {
-	        this.url = url;
-	    }
-
-	    public String getUsername()
-	    {
-	        return username;
-	    }
-
-	    public void setUsername(String username)
-	    {
-	        this.username = username;
-	    }
-
-	    public String getPassword()
-	    {
-	        return password;
-	    }
-
-	    public void setPassword(String password)
-	    {
-	        this.password = password;
-	    }
+	
 		
 		
 		
@@ -83,7 +40,17 @@ public class Scheduler {
 			Scheduler.userBucketPath1 = userBucketPath1;
 		}
 		
-	
+		@Autowired
+	    private JdbcProperties jdbcProperties;
+	 @PostConstruct
+	    public void display()
+	    {
+	        System.out.println("*** Read from Property file ***");
+	        System.out.println("Url      : "+jdbcProperties.getUrl());
+	        System.out.println("Driver   : "+jdbcProperties.getDriver());
+	        System.out.println("Username : "+jdbcProperties.getUsername());
+	        System.out.println("Password : "+jdbcProperties.getPassword());
+	    }
 	@Scheduled(fixedRate = 10000)
 	public void performTask() {
 
@@ -91,7 +58,7 @@ public class Scheduler {
 				+ dateFormat.format(new Date()));
 		System.out.println(userBucketPath);
 		System.out.println(userBucketPath1);
-		System.out.println("driver=" + driver + ", url=" + url + ", username=" + username + ", password=" + password);
+		display();
 		 
 		
 		

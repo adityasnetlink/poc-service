@@ -1,7 +1,10 @@
 package com.example.HelloWorld;
 
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,64 +40,28 @@ public class HelloWorldApplication
 		HelloWorldApplication.userBucketPath = userBucketPath;
 	}
 
-	 public static String driver;
-	    public static String url;
-	    public static String username;
-	    public static String password;
-
-	    public String getDriver()
-	    {
-	        return driver;
-	    }
-
-	    public void setDriver(String driver)
-	    {
-	        this.driver = driver;
-	    }
-
-	    public String getUrl()
-	    {
-	        return url;
-	    }
-
-	    public void setUrl(String url)
-	    {
-	        this.url = url;
-	    }
-
-	    public String getUsername()
-	    {
-	        return username;
-	    }
-
-	    public void setUsername(String username)
-	    {
-	        this.username = username;
-	    }
-
-	    public String getPassword()
-	    {
-	        return password;
-	    }
-
-	    public void setPassword(String password)
-	    {
-	        this.password = password;
-	    }
-		
-
-
 	
+
+	 @Autowired
+	    private JdbcProperties jdbcProperties;
+	 @PostConstruct
+	    public void display()
+	    {
+	        System.out.println("*** Read from Property file ***");
+	        System.out.println("Url      : "+jdbcProperties.getUrl());
+	        System.out.println("Driver   : "+jdbcProperties.getDriver());
+	        System.out.println("Username : "+jdbcProperties.getUsername());
+	        System.out.println("Password : "+jdbcProperties.getPassword());
+	    }
 
 
 
 	public static void main(String[] args)
 	{
 		System.out.println("main "+ userBucketPath);
-		System.out.println("driver=" + driver + ", url=" + url + ", username=" + username + ", password=" + password);
+		
 		 SpringApplication.run(HelloWorldApplication.class, args);
 		System.out.println("main "+ userBucketPath);
-		System.out.println("driver=" + driver + ", url=" + url + ", username=" + username + ", password=" + password);
 		
 	
 		
