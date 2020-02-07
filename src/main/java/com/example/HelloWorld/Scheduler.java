@@ -15,7 +15,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.example.HelloWorld.*;
-
+@Configuration
+@ConfigurationProperties(prefix = "jdbc")
 @Component
 public class Scheduler {
 
