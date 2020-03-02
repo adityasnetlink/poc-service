@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WelcomeConfiguration {
 
-    private String message = "Welcome to Netlink";
+    private String message;
 
     public String getMessage() {
         return message;
