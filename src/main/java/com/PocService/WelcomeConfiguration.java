@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @ConfigurationProperties(prefix = "welcome")
 @Configuration
-@RefreshScope
+
 public class WelcomeConfiguration {
 
     private String message;
