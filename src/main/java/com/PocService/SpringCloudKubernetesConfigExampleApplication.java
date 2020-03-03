@@ -1,4 +1,4 @@
-package com.HelloWorld;
+package com.PocService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,10 +1,12 @@
-package com.HelloWorld;
+package com.PocService;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
 @ConfigurationProperties(prefix = "welcome")
 @Configuration
+@RefreshScope
 public class WelcomeConfiguration {
 
     private String message;

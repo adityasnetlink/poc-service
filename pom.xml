@@ -5,9 +5,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>HelloWorld</artifactId>
+	<artifactId>PocService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HelloWorld</name>
+	<name>PocService</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencyManagement>
@@ -37,12 +37,15 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
+		</dependency> -->
 
-
+<!-- <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>spring-cloud-kubernetes-core</artifactId>
+    </dependency> -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-kubernetes</artifactId>
@@ -54,7 +57,7 @@
 			<version>0.2.0.RELEASE</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-actuator -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-actuator</artifactId>
 
@@ -67,7 +70,7 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>2.0.0.Final</version><!--$NO-MVN-MAN-VER$ -->
+			<version>2.0.0.Final</version>$NO-MVN-MAN-VER$
 		</dependency>
 
 
@@ -75,7 +78,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -84,10 +87,10 @@
 
 
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-client</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<!-- <dependency> <groupId>org.apache.kafka</groupId> <artifactId>kafka-log4j-appender</artifactId> 
 			<version>2.3.0</version> <exclusions> <exclusion> <groupId>org.slf4j</groupId> 
@@ -105,7 +108,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>HelloWorld</finalName>
+		<finalName>poc-service</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
