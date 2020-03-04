@@ -16,7 +16,7 @@ public class SchedulerComponent {
 
     @Value("${content}")
     private String data;
-    @Scheduled(fixedDelay = 3000)
+    @Scheduled(fixedDelay = 20000)
     public void schedule() {
     	
     	
