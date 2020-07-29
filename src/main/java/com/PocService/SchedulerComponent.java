@@ -7,12 +7,13 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
+@RefreshScope
 public class SchedulerComponent {
 
 	
 	  @Autowired WelcomeConfiguration config;
 	 
-    @RefreshScope
+    
     @Value("${content}")
     private String data;
     @Scheduled(fixedDelay = 20000)
