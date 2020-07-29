@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-
+@RefreshScope
 public class SchedulerComponent {
 
 	
@@ -20,7 +20,7 @@ public class SchedulerComponent {
     public void schedule() {
     	
     	
-        System.out.println(config.getMessage());
+        //System.out.println(config.getMessage());
         System.out.println(data);
     }
 }
