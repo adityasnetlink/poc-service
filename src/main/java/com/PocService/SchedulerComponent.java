@@ -22,7 +22,7 @@ public class SchedulerComponent {
     public void schedule() {
     	
     	
-        //System.out.println(config.getMessage());
+        System.out.println(config.getMessage());
         System.out.println(data);
     }
 }
