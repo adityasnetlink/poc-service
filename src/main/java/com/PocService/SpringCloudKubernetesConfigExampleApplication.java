@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-
+@RefreshScope
 public class SpringCloudKubernetesConfigExampleApplication {
 
 	public static void main(String[] args) {
