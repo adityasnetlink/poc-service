@@ -9,8 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @SpringBootApplication
 @RefreshScope
-@ComponentScan(value={
-		"com.PocService.*"})
+@ComponentScan
 public class SpringCloudKubernetesConfigExampleApplication {
 
 	public static void main(String[] args) {
