@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/welcome")
 @RestController
+@RefreshScope
 public class WelcomeController {
 
     @Value("${message:Welcome to Youtube}")
